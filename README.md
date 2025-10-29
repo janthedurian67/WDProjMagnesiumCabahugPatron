@@ -76,4 +76,6 @@ JavaScript will be incorporated into PopArchives to improve its interactivity an
 
 Wireframes: 
 
-https://www.canva.com/design/DAG3De0bIVw/GwtktaGYFZS_MTyROO6c3A/edit?utm_content=DAG3De0bIVw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Janver's: https://www.canva.com/design/DAG3De0bIVw/GwtktaGYFZS_MTyROO6c3A/edit?utm_content=DAG3De0bIVw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+Calyx's: https://www.canva.com/design/DAG3F3CLbzQ/4pGKpwtRQ-8Q912T_K6Vpg/edit?utm_content=DAG3F3CLbzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
