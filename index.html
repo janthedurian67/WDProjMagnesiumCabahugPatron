@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PopArchives</title>
+  <link rel="stylesheet" href="public/styles.css" />
+  <link rel="icon" href="assets/museumlogo.jpg" />
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <div class="logo">Museum</div>
+      <div class="site-name">PopArchives</div>
+      <input type="text" class="search-bar" placeholder="Search..." />
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li class="nav-item active">Home</li>
+      <li class="nav-item">News</li>
+      <li class="nav-item">Icons & Celebrities</li>
+      <li class="nav-item">Memes & Trends</li>
+      <li class="nav-item">Rise of the Internet</li>
+      <li class="nav-item">About Us</li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="intro">
+      <h1>INTRODUCTION</h1>
+      <p>Description and Purpose of Website.</p>
+    </section>
+
+    <section class="grid">
+      <div class="grid-item" onclick="navigate('news')">NEWS</div>
+      <div class="grid-item" onclick="navigate('icons')">Icons & Celebrities</div>
+      <div class="grid-item" onclick="navigate('memes')">Memes & Trends</div>
+      <div class="grid-item" onclick="navigate('internet')">Rise of the Internet</div>
+      <div class="grid-item" onclick="navigate('about')">About Us</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 PopArchives &nbsp; | &nbsp; about us &nbsp; | &nbsp; Sources &nbsp; | &nbsp; Social Links</p>
+  </footer>
+
+  <script src="public/script.js"></script>
+</body>
+</html>
