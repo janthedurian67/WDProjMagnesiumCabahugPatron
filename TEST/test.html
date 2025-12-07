@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PopArchives</title>
+
+    <!-- Walter Turncoat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Walter Turncoat", cursive;
+            background: white;
+        }
+
+        /* NAVIGATION */
+        header {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            border-bottom: 3px solid black;
+            justify-content: space-between;
+        }
+
+        /* Hamburger Menu */
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .menu div {
+            width: 35px;
+            height: 3px;
+            background: black;
+        }
+
+        /* Logo + Text */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 28px;
+        }
+
+        .brand img {
+            height: 50px;
+        }
+
+        .logo {
+    height: 60px;
+}
+
+
+        /* Search Bar */
+        .search {
+            border: 3px solid black;
+            padding: 6px 12px;
+            width: 230px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search input {
+            border: none;
+            outline: none;
+            width: 85%;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        /* Section Blocks */
+        .section {
+            border-bottom: 3px solid black;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 26px;
+        }
+
+        /* Picture Section */
+        .card-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 20px;
+            border-bottom: 3px solid black;
+        }
+
+        .card {
+            width: 220px;
+            height: 260px;
+            border: 3px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .card-top {
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+        }
+
+        .card-bottom {
+            height: 40%;
+            border-top: 3px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            color: #e6b625;
+        }
+
+        /* Footer */
+        footer {
+            padding: 15px;
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <div class="brand">
+            <img src="logo.png" alt="PopArchives Logo" class="logo">
+            <span>PopArchives</span>
+        </div>
+
+        <div class="search">
+            <input type="text" placeholder="">
+            🔍
+        </div>
+    </header>
+
+    <!-- HOME SECTION -->
+    <div class="section">
+        <div class="title">Home</div>
+        <div class="subtitle">Welcome greeting with collage of images in the background</div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="section">
+        <div class="title" style="font-size: 42px;">INTRODUCTION</div>
+        <div class="subtitle">(Description and Purpose of Website)</div>
+    </div>
+
+    <!-- 5 CARDS -->
+    <div class="card-row">
+        <div class="card">
+            <div class="card-top">Picture</div>
+            <div class="card-bottom">NEWS</div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">Picture</div>
+            <div class="card-bottom">Icons &<br> Celebrities</div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">Picture</div>
+            <div class="card-bottom">Memes & Trends</div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">Picture</div>
+            <div class="card-bottom">Rise of the<br> Internet</div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">Picture</div>
+            <div class="card-bottom">About Us</div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 PopArchives    about us    Sources    Social Links
+    </footer>
+
+</body>
+</html>
