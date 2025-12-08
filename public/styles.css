@@ -17,11 +17,10 @@ body {
 
 .logo {
   margin-right: 10px;
-  font-weight: bold;
 }
 
 .site-name {
-  margin-right: auto;
+  margin-right: 30px;
 }
 
 .search-bar {
