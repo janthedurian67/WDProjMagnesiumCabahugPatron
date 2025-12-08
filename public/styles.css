@@ -15,12 +15,15 @@ body {
   padding: 10px;
 }
 
-.logo {
-  margin-right: 10px;
+.weblogo {
+  margin-left: 20px;
+  margin-right: auto;
 }
 
 .site-name {
-  margin-right: 30px;
+  margin-right: auto;
+  position: relative;
+  left: -350px;
 }
 
 .search-bar {
