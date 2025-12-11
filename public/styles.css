@@ -1,3 +1,7 @@
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -15,13 +19,17 @@ body {
   padding: 10px;
 }
 
-.logo {
-  margin-right: 10px;
-  font-weight: bold;
+.weblogo {
+  margin-left: 20px;
+  margin-right: auto;
+  position: relative;
+  left: 10px;
 }
 
 .site-name {
   margin-right: auto;
+  position: relative;
+  left: -350px;
 }
 
 .search-bar {
@@ -51,6 +59,7 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
+  color:#222;
 }
 
 .sidebar li {
@@ -62,6 +71,10 @@ body {
 .sidebar li:hover {
   background-color: #ffcc00;
   color: #222;
+}
+
+a.sidebar li:hover{
+  color:#222;
 }
 
 .sidebar .active {
@@ -84,6 +97,12 @@ body {
   padding: 20px;
   text-align: center;
 }
+
+.purpose {
+  padding: 20px;
+  text-align: center;
+}
+
 
 .grid {
   display: grid;

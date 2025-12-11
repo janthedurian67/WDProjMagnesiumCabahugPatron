@@ -28,8 +28,4 @@ document.addEventListener('click', (e) => {
   }
 });
 
-function navigate(section) {
-  alert(`Navigate to ${section} section (to be implemented)`);
-}
-
 //for sidebar

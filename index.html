@@ -6,14 +6,21 @@
   <title>PopArchives</title>
   <link rel="stylesheet" href="public/styles.css" />
   <link rel="icon" href="assets/museumlogo.jpg" />
+
+  
+  <style>
+    .sidebar .nav-item:hover {
+      color:#222 !important;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="top-bar">
-      <div class="logo">Museum</div>
-      <div class="site-name">PopArchives</div>
-      <input type="text" class="search-bar" placeholder="Search..." />
       <div class="hamburger" id="hamburger">&#9776;</div>
+      <img class="weblogo" src="assets/museumlogo.jpg" width="70" height="70">
+      <div class="site-name"> <p>  PopArchives </p></div>
+      <input type="text" class="search-bar" placeholder="Search..." /> <!-- for the search bar -->
     </div>
   </header>
 
@@ -22,33 +29,43 @@
   <nav class="sidebar" id="sidebar">
     <ul>
       <li class="nav-item active">Home</li>
-      <li class="nav-item">News</li>
-      <li class="nav-item">Icons & Celebrities</li>
-      <li class="nav-item">Memes & Trends</li>
-      <li class="nav-item">Rise of the Internet</li>
-      <li class="nav-item">About Us</li>
+      <li class="nav-item"> <a href=public/webpages/news.html style="color:white; text-decoration: none;"> News </a> </li>
+      <li class="nav-item"> <a href=public/webpages/celebrities.html style="color:white; text-decoration: none;"> Icons & Celebrities </a> </li>
+      <li class="nav-item"> <a href=public/webpages/memes.html style="color:white; text-decoration: none;"> Memes & Trends </a> </li>
+      <li class="nav-item"> <a href=public/webpages/internet.html style="color:white; text-decoration: none;"> Rise of the Internet </a> </li>
+      <li class="nav-item"> <a href=public/webpages/aboutus.html style="color:white; text-decoration: none;"> About Us </a> </li>
     </ul>
   </nav>
 
   <main>
     <section class="intro">
       <h1>INTRODUCTION</h1>
-      <p>Description and Purpose of Website.</p>
+    </section>
+
+    <section class="purpose"> 
+      <h2> Welcome to PopArchives! </h2>
+      <p>
+        This is your go-to website for major news across the world, pop culture references, celebrity buzz, and trending topics! 
+      </p>
+      <p>
+        Click on any of the grids below to navigate to our main pages, or use the sidebar and search bar!
+      </p>
     </section>
 
     <section class="grid">
-      <div class="grid-item" onclick="navigate('news')">NEWS</div>
-      <div class="grid-item" onclick="navigate('icons')">Icons & Celebrities</div>
-      <div class="grid-item" onclick="navigate('memes')">Memes & Trends</div>
-      <div class="grid-item" onclick="navigate('internet')">Rise of the Internet</div>
-      <div class="grid-item" onclick="navigate('about')">About Us</div>
+      <div class="grid-item" onclick="navigate('news')" style="background-image: url(https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTu-GSY_bXjggu92Go8I0Od4bEoIE-RnSuaCRmN5xcL4lfSDQI169Wyg5hK0VegSLUJjpqlG47veDZ33C0);"> <a href=public/webpages/news.html style="color:#5d6b6a"> News </a> </div>
+      <div class="grid-item" onclick="navigate('icons')" style="background-image: url(https://cdn.britannica.com/37/252437-050-F21BD210/Taylor-Swift-performs-The-Eras-Tour-Sao-Paulo-Brazil-2023.jpg);"> <a href=public/webpages/celebrities.html style="color:#5e482f;"> Icons & Celebrities </a> </div>
+      <div class="grid-item" onclick="navigate('memes')" style="background-image: url(https://cdn.shopify.com/s/files/1/0863/7906/9713/articles/the_monsters_10-things-to-know-labubu1_b51a30dd-984b-402e-a207-8022d7c75f60.jpg?v=1745245602);"> <a href=public/webpages/memes.html style="color:#418185;"> Memes & Trends </a> </div>
+      <div class="grid-item" onclick="navigate('internet')" style="background-image: url(https://www.popsci.com/wp-content/uploads/2024/01/16/00-header-wifi-7.jpg?quality=85&w=2000);"> <a href=public/webpages/internet.html style="color:white;"> Rise of the Internet </a> </div>
+      <div class="grid-item" onclick="navigate('about')" style="background-image: url(https://files01.pna.gov.ph/ograph/2020/05/23/10646629101526773765081142700374601329995235n.jpg);"> <a href=public/webpages/aboutus.html style="color:#103f4a;"> About Us </a> </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 PopArchives &nbsp; | &nbsp; about us &nbsp; | &nbsp; Sources &nbsp; | &nbsp; Social Links</p>
+    <p>© 2025 PopArchives &nbsp; | &nbsp; <a href=public/webpages/aboutus.html style="color: white;"> About Us </a> &nbsp; | &nbsp; Sources &nbsp; | &nbsp; Social Links</p>
   </footer>
 
   <script src="public/script.js"></script>
 </body>
 </html>
+
