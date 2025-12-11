@@ -93,10 +93,165 @@ a.sidebar li:hover{
   z-index: 900;
 }
 
+/* --- MAIN CONTENT LAYOUT --- */
+.main-content-wrapper {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.page-header-title {
+    text-align: center;
+    font-size: 48px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--dark-line);
+    margin: 0; /* Reset margin */
+}
+
+.content-body {
+    display: flex;
+}
+
+/* --- TABLE OF CONTENTS (TOC) --- */
+.toc-sidebar {
+    width: 250px;
+    padding-right: 20px;
+    padding-top: 20px;
+    border-right: 5px solid black;
+    margin-right: 20px;
+    flex-shrink: 0; /* Prevents TOC from shrinking */
+}
+
+.toc-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+}
+
+.toc-list li a {
+    display: block;
+    padding: 8px 0;
+    font-size: 16px;
+}
+
+.toc-list li a:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+hr{
+    height:5px;
+    background-color: #222;
+}
+
+/* --- ARTICLES CONTAINER --- */
+.articles-container {
+    flex-grow: 1;
+    padding-top: 20px;
+}
+
+.news-section {
+    margin-bottom: 40px;
+}
+
+/* Sub-section Header (LATEST, MUSIC, etc.) */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 5px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+}
+
+.section-search-bar {
+    display: flex;
+    border: 2px solid black;
+}
+
+.section-search-bar input {
+    border: none;
+    padding: 5px;
+    width: 150px;
+    outline: none;
+}
+
+.section-search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* --- ARTICLE CARD STYLING --- */
+.article-card {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.article-picture {
+    width: 150px; /* Slightly larger picture box */
+    height: 120px;
+    background-color: white;
+    border: 2px solid var(--dark-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.article-body h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.article-headline-link {
+    color: inherit; /* Use default text color */
+    text-decoration: none; /* Remove default underline */
+    display: block; /* Ensure the link wraps the h3 content */
+}
+
+.article-headline-link:hover {
+    color: var(--primary-color); /* Highlight color on hover */
+    text-decoration: underline; /* Indicate clickability */
+}
+
+.article-body p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.see-all {
+    display: block;
+    text-align: right;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
 footer {
   background-color: #333;
   color: white;
   text-align: center;
   padding: 10px;
   margin-top: auto;
+  width: 100vw;
+  position:absolute;
+  left:0;
 }
+
