@@ -59,6 +59,7 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
+  color:#222;
 }
 
 .sidebar li {
@@ -70,6 +71,10 @@ body {
 .sidebar li:hover {
   background-color: #ffcc00;
   color: #222;
+}
+
+a.sidebar li:hover{
+  color:#222;
 }
 
 .sidebar .active {
