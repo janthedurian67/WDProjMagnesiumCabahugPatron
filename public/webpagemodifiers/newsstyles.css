@@ -139,6 +139,8 @@ a.sidebar li:hover{
     display: block;
     padding: 8px 0;
     font-size: 16px;
+    color: black;
+    text-decoration: none;
 }
 
 .toc-list li a:hover {
@@ -203,12 +205,9 @@ hr{
 .article-picture {
     width: 150px; /* Slightly larger picture box */
     height: 120px;
-    background-color: white;
     border: 2px solid var(--dark-line);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
+    object-fit: cover; /* Maintains aspect ratio and covers the container */
+    object-position: top;
     margin-right: 20px;
     flex-shrink: 0;
 }
