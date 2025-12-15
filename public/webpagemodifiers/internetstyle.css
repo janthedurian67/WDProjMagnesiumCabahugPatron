@@ -196,6 +196,60 @@
       padding: 5px;
   }
   
+  /* --- DROPDOWN STYLING --- */
+  .alphabet-dropdown-list {
+      margin-top: 10px;
+  }
+  
+  .celeb-dropdown {
+      margin-bottom: 10px;
+      border: 1px solid #ccc; /* Light border for separation */
+  }
+  
+  .dropdown-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f4f4f4; /* Light background for the header bar */
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      padding: 10px 40px 10px 20px; 
+      border: 1px solid #ccc; /* Applying the border here */
+      width: 73vw;
+  }
+  
+  .dropdown-header:hover {
+      background-color: #e0e0e0;
+  }
+  
+  .dropdown-icon {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+  }
+  
+  .celeb-dropdown.active .dropdown-icon {
+      transform: rotate(180deg);
+  }
+  
+  .dropdown-content {
+      display: none; 
+      overflow: hidden;
+      padding: 10px 20px 0; 
+      border-top: 1px solid #eee; 
+  }
+  
+  .celeb-dropdown.active .dropdown-content {
+      display: block;
+  }
+  
+  .dropdown-content .article-card {
+      padding-top: 10px;
+      margin-bottom: 15px; 
+  }
+  
   /* --- ARTICLE CARD STYLING --- */
   .article-card {
       display: flex;
