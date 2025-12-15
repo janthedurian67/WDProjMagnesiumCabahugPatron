@@ -27,4 +27,5 @@ document.addEventListener('click', (e) => {
     closeSidebar();
   }
 });
+
 //for sidebar

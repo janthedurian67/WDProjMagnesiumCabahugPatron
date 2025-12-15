@@ -108,17 +108,18 @@ a.sidebar li:hover{
 }
 
 .content-body {
-    display: flex;
+    display: flex; /* This creates the sidebar/content split */
+    padding-top: 20px;
 }
 
-/* --- TABLE OF CONTENTS (TOC) --- */
+/* --- TOC (Left Nav) --- */
 .toc-sidebar {
     width: 250px;
     padding-right: 20px;
-    padding-top: 20px;
+    padding-top: 0; 
     border-right: 5px solid black;
     margin-right: 20px;
-    flex-shrink: 0; /* Prevents TOC from shrinking */
+    flex-shrink: 0; 
 }
 
 .toc-header {
@@ -153,94 +154,111 @@ hr{
     background-color: #222;
 }
 
-/* --- ARTICLES CONTAINER --- */
-.articles-container {
+/* --- ARTICLE CONTENT (Next to TOC) --- */
+
+.main-article-content {
     flex-grow: 1;
+    padding-right: 20px;
+}
+
+.article-header-title {
+    font-size: 50px;
+    text-align: center; 
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+/* Container for the centered items (Image and TOC) */
+.article-top-section {
+    width: 100%;
+    padding-right: 20px; 
+}
+
+/* --- PICTURE STYLING (Centered) --- */
+.main-picture-container {
+    width: 600px; 
+    margin: 0 auto 20px auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.main-picture {
+    width: 100%; 
+    height: auto; 
+    max-height: 400px; 
+    object-fit: cover;
+    object-position: top; 
+    border: 1px solid black;
+}
+
+.main-picture-title {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    color: #555;
+}
+
+
+/* --- TABLE OF CONTENTS BOX STYLING (Centered) --- */
+.article-toc-box {
+    width: 600px; 
+    margin: 20px auto 40px auto; /* CORRECT CENTERING: 20px auto 40px auto */
+    border: 1px solid black;
+}
+
+.article-toc-header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.article-toc-list {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.article-toc-list li a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.article-toc-list li a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* --- ARTICLE CONTENT STYLING (Full Width within main-article-content) --- */
+.article-container {
     padding-top: 20px;
 }
 
-.news-section {
-    margin-bottom: 40px;
+.article-section-title {
+    font-size: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
 }
 
-/* Sub-section Header (LATEST, MUSIC, etc.) */
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    border-bottom: 5px solid black;
-    padding-bottom: 5px;
+.article-container p {
+    line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.section-header h2 {
-    font-size: 36px;
+.movie-list ul {
+    text-indent: 30px;
 }
 
-.section-search-bar {
-    display: flex;
-    border: 2px solid black;
-}
-
-.section-search-bar input {
-    border: none;
-    padding: 5px;
-    width: 150px;
-    outline: none;
-}
-
-.section-search-bar button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-}
-
-/* --- ARTICLE CARD STYLING --- */
-.article-card {
-    display: flex;
-    margin-bottom: 25px;
-}
-
-.article-picture {
-    width: 150px; /* Slightly larger picture box */
-    height: 120px;
-    border: 2px solid var(--dark-line);
-    object-fit: cover; /* Maintains aspect ratio and covers the container */
-    object-position: top;
-    margin-right: 20px;
-    flex-shrink: 0;
-}
-
-.article-body h3 {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.article-headline-link {
-    color: inherit; /* Use default text color */
-    text-decoration: none; /* Remove default underline */
-    display: block; /* Ensure the link wraps the h3 content */
-}
-
-.article-headline-link:hover {
-    color: var(--primary-color); /* Highlight color on hover */
-    text-decoration: underline; /* Indicate clickability */
-}
-
-.article-body p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.4;
-}
-
-.see-all {
-    display: block;
-    text-align: right;
-    color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: none;
-    margin-top: 10px;
+.award-list ul {
+    text-indent: 30px;
 }
 
 footer {
@@ -249,8 +267,8 @@ footer {
   text-align: center;
   padding: 10px;
   margin-top: auto;
-  width: 100vw;
-  position:absolute;
-  left:0;
+  /* FIX: Change width to 100% and remove absolute positioning */
+  width: 100%; 
+  position: relative; 
+  left: 0;
 }
-
