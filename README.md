@@ -79,3 +79,22 @@ Wireframes:
 Janver's: https://www.canva.com/design/DAG3De0bIVw/GwtktaGYFZS_MTyROO6c3A/edit?utm_content=DAG3De0bIVw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 Calyx's: https://www.canva.com/design/DAG3F3CLbzQ/4pGKpwtRQ-8Q912T_K6Vpg/edit?utm_content=DAG3F3CLbzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+------- UPDATED ------
+
+The HTML form usage will be via a sign up/log in page. The form will ask for user's name, birthdate, credit card/bank account number, email, and a password for their credentials. Upon signing up, the user gains the following perks:
+
+- 
+
+As for how the website will use it, the user now gets a profile page, where they can adjust their username, profile picture, display name, and description. A new webpage entitled "Premium" will also be added, which contains a paid premium plan for users to access more content and post more.
+
+Premium:
+- 
+
+--- How They Are To Be Used ---
+
+(New Wireframes are In The Canva Link (Calyx's))
+
+In the top right corner of the screen, before the search bar, is an option to sign up/log in, as well as a profile picture (if user is not logged in, it will show the default profile picture). Clicking this leads you to the website where you will log in. If the user does not have an account on the website, they may register by clicking on "Sign Up". On both pages, the user simply has to fill out the details asked, and once finished, click on the "Sign Up"/"Log In" box.
+
+Clicking on the box leads to the user's profile page. Here, they may change their profile picture (clicking on the picture icon), their username (clicking on the current username), and description (editing the "Description" textbox). 
