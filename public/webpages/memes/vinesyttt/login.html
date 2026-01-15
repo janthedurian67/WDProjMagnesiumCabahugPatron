@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login – PopArchives</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+  <!-- Top navigation -->
+  <header>
+    <div class="top-bar">
+      <a href="../../index.html" class="home-link">Home</a>
+    </div>
+  </header>
+
+  <h1>Log In</h1>
+  <p>Welcome back! Log in to access your account.</p>
+
+  <form id="loginForm">
+
+    <label>
+      Username or Email:
+      <input type="text" id="loginInput" required>
+    </label><br><br>
+
+    <label>
+      Password:
+      <input type="password" id="loginPassword" required>
+    </label><br><br>
+
+    <button type="submit">Log In</button>
+
+  </form>
+
+  <p>
+    Don’t have an account yet?
+    <a href="register.html">Register here</a>
+  </p>
+
+  <script>
+    const form = document.getElementById("loginForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const loginInput = document.getElementById("loginInput").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const savedUser = JSON.parse(localStorage.getItem("poparchivesUser"));
+
+      if (!savedUser) {
+        alert("No account found. Please register first.");
+        return;
+      }
+
+      const isValidLogin =
+        (loginInput === savedUser.username || loginInput === savedUser.email) &&
+        password === savedUser.password;
+
+      if (isValidLogin) {
+        localStorage.setItem("loggedIn", "true");
+        alert("Login successful!");
+        window.location.href = "profile.html";
+      } else {
+        alert("Incorrect username/email or password.");
+      }
+    });
+  </script>
+
+</body>
+</html>

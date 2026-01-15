@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register – PopArchives</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+  <!-- Top navigation -->
+  <header>
+    <div class="top-bar">
+      <a href="../../index.html" class="home-link">Home</a>
+    </div>
+  </header>
+
+  <h1>Register</h1>
+  <p>Create an account to unlock special features.</p>
+
+  <form id="registerForm">
+
+    <label>
+      Full Name:
+      <input type="text" id="name" required>
+    </label><br><br>
+
+    <label>
+      Username / Display Name:
+      <input type="text" id="username" required>
+    </label><br><br>
+
+    <label>
+      Birthdate:
+      <input type="date" id="birthdate" required>
+    </label><br><br>
+
+    <label>
+      Email:
+      <input type="email" id="email" required>
+    </label><br><br>
+
+    <label>
+      Password:
+      <input type="password" id="password" required>
+    </label><br><br>
+
+    <fieldset>
+      <legend>Select your interests:</legend>
+
+      <label>
+        <input type="checkbox" value="News"> News
+      </label><br>
+
+      <label>
+        <input type="checkbox" value="Icons & Celebrities"> Icons & Celebrities
+      </label><br>
+
+      <label>
+        <input type="checkbox" value="Memes & Trends"> Memes & Trends
+      </label><br>
+
+      <label>
+        <input type="checkbox" value="Rise of the Internet"> Rise of the Internet
+      </label>
+    </fieldset><br>
+
+    <button type="submit">Register</button>
+
+  </form>
+
+  <p>
+    Already have an account?
+    <a href="login.html">Log in here</a>
+  </p>
+
+  <script>
+    const form = document.getElementById("registerForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const username = document.getElementById("username").value;
+      const birthdate = document.getElementById("birthdate").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const interests = [];
+      document.querySelectorAll('input[type="checkbox"]:checked')
+        .forEach(item => interests.push(item.value));
+
+      const userData = {
+        name,
+        username,
+        birthdate,
+        email,
+        password,
+        interests
+      };
+
+      localStorage.setItem("poparchivesUser", JSON.stringify(userData));
+      localStorage.setItem("loggedIn", "true");
+
+      alert("Registration successful!");
+      window.location.href = "profile.html";
+    });
+  </script>
+
+</body>
+</html>

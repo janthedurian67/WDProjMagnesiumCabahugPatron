@@ -79,3 +79,38 @@ Wireframes:
 Janver's: https://www.canva.com/design/DAG3De0bIVw/GwtktaGYFZS_MTyROO6c3A/edit?utm_content=DAG3De0bIVw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 Calyx's: https://www.canva.com/design/DAG3F3CLbzQ/4pGKpwtRQ-8Q912T_K6Vpg/edit?utm_content=DAG3F3CLbzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+------- UPDATED ------
+
+The HTML form usage will be via a log in/registration page. The form will ask for user's name, birthdate, email, and a password for their credentials. The form will also ask the interests. Upon signing up, the user gains the following perks:
+
+- Bookmarking topic pages
+- Gaining access to post and edit others' posts
+- Gaining access to comment on posts
+- Having a personalized For You page
+
+As for how the website will use it, the user now gets a profile page, where they can adjust their username, profile picture, display name, and description. Alongside this, a new webpage appears for the user. This webpage is basically a For You page, where posts that align with a user's interests are shown to them.
+
+All the details entered in the form will be stored locally on the user's device with Web Storage API. This means that the user's credentials stay logged in, even after closing the tab/window.
+
+--- DESIGN ---
+
+In the updated heading bar, on the right-hand side will be a Log In/Registration page. Clicking on it immediately leads to the Log In page. If the user does not have an account yet, there will be a link to the registration page.
+
+For the log in/registration page:
+
+The registration page has two parts. The first part will feature fields where the user is asked for their name, a username/display name, birthdate, email, pronouns, and a password. The second part will feature multiple topics. Here, the user will click the topics that they are most interested. These will form the For You page for the user. On the side of the registration page is a "Welcome" message.
+
+The log in page will simply ask the user for their username/email and password. If the user does not have an account yet, there will be a link to the registration page. On the side of the log in page is a "Welcome Back" message.
+
+For the profile page:
+
+The profile page will feature the user's profile picture. This can be edited by clicking the picture currently being used, and then replacing it with a file from the user's device. The profile page also has a banner that can be edited in a similar manner.
+
+Beside the profile picture are the user's name and username/display name, which can likewise be edited by clicking the pencil icon next to the names (the icon appears upon hovering), and amount of posts and comments the user has made.
+
+Underneath is a description that the user can edit, similar to Twitter bios. Underneath the description is a history of the user's posts, sorted by newest. If a user has multiple posts that won't fit into one page (10 posts per page), the posts will be paginated into multiple pages (with a directory at the top).
+
+For the For You page:
+
+Similar to Reddit's For You page, this website's For You page is mostly just posts, regardless of category and topic. Posts that make it onto the For You page are influenced by the user's interests that were selected during registration, as well as topics the user often engages in (determined via comments, likes, and searches).

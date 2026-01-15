@@ -1,0 +1,274 @@
+* {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.weblogo {
+  margin-left: 20px;
+  margin-right: auto;
+  position: relative;
+  left: 10px;
+}
+
+.site-name {
+  margin-right: auto;
+  position: relative;
+  left: -350px;
+}
+
+.search-bar {
+  margin-left: auto;
+  padding: 5px;
+}
+
+.hamburger {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #222;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding-top: 60px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  color:#222;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar li:hover {
+  background-color: #ffcc00;
+  color: #222;
+}
+
+a.sidebar li:hover{
+  color:#222;
+}
+
+.sidebar .active {
+  background-color: #ffcc00;
+  color: #222;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 900;
+}
+
+/* --- MAIN CONTENT LAYOUT --- */
+.main-content-wrapper {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
+.page-header-title {
+    text-align: center;
+    font-size: 48px;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--dark-line);
+    margin: 0; /* Reset margin */
+}
+
+.content-body {
+    display: flex; /* This creates the sidebar/content split */
+    padding-top: 20px;
+}
+
+/* --- TOC (Left Nav) --- */
+.toc-sidebar {
+    width: 250px;
+    padding-right: 20px;
+    padding-top: 0; 
+    border-right: 5px solid black;
+    margin-right: 20px;
+    flex-shrink: 0; 
+}
+
+.toc-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+}
+
+.toc-list li a {
+    display: block;
+    padding: 8px 0;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+}
+
+.toc-list li a:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+hr{
+    height:5px;
+    background-color: #222;
+}
+
+/* --- ARTICLE CONTENT (Next to TOC) --- */
+
+.main-article-content {
+    flex-grow: 1;
+    padding-right: 20px;
+}
+
+.article-header-title {
+    font-size: 50px;
+    text-align: center; 
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+/* Container for the centered items (Image and TOC) */
+.article-top-section {
+    width: 100%;
+    padding-right: 20px; 
+}
+
+/* --- PICTURE STYLING (Centered) --- */
+.main-picture-container {
+    width: 600px; 
+    margin: 0 auto 20px auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.main-picture {
+    width: 100%; 
+    height: auto; 
+    max-height: 400px; 
+    object-fit: cover;
+    object-position: top; 
+    border: 1px solid black;
+}
+
+.main-picture-title {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+    color: #555;
+}
+
+
+/* --- TABLE OF CONTENTS BOX STYLING (Centered) --- */
+.article-toc-box {
+    width: 600px; 
+    margin: 20px auto 40px auto; /* CORRECT CENTERING: 20px auto 40px auto */
+    border: 1px solid black;
+}
+
+.article-toc-header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.article-toc-list {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+.article-toc-list li a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.article-toc-list li a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* --- ARTICLE CONTENT STYLING (Full Width within main-article-content) --- */
+.article-container {
+    padding-top: 20px;
+}
+
+.article-section-title {
+    font-size: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.article-container p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.movie-list ul {
+    text-indent: 30px;
+}
+
+.award-list ul {
+    text-indent: 30px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  /* FIX: Change width to 100% and remove absolute positioning */
+  width: 100%; 
+  position: relative; 
+  left: 0;
+}
