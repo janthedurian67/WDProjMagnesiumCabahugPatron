@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile – PopArchives</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+  <!-- Top navigation -->
+  <header>
+    <div class="top-bar">
+      <a href="../../index.html" class="home-link">Home</a>
+      <button id="logoutBtn">Log Out</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>Your Profile</h1>
+
+    <div class="profile-box">
+      <p><strong>Full Name:</strong> <span id="profileName"></span></p>
+      <p><strong>Username:</strong> <span id="profileUsername"></span></p>
+      <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+      <p><strong>Birthdate:</strong> <span id="profileBirthdate"></span></p>
+      <p><strong>Interests:</strong> <span id="profileInterests"></span></p>
+    </div>
+  </main>
+
+  <script>
+    const loggedIn = localStorage.getItem("loggedIn");
+    const userData = JSON.parse(localStorage.getItem("poparchivesUser"));
+
+    if (!loggedIn || !userData) {
+      alert("You must be logged in to view this page.");
+      window.location.href = "login.html";
+    }
+
+    document.getElementById("profileName").textContent = userData.name;
+    document.getElementById("profileUsername").textContent = userData.username;
+    document.getElementById("profileEmail").textContent = userData.email;
+    document.getElementById("profileBirthdate").textContent = userData.birthdate;
+    document.getElementById("profileInterests").textContent =
+      userData.interests.length > 0
+        ? userData.interests.join(", ")
+        : "No interests selected";
+
+    document.getElementById("logoutBtn").addEventListener("click", function () {
+      localStorage.removeItem("loggedIn");
+      alert("You have been logged out.");
+      window.location.href = "../../index.html";
+    });
+  </script>
+
+</body>
+</html>
