@@ -125,3 +125,65 @@ footer {
   padding: 10px;
   margin-top: auto;
 }
+
+/* default light theme variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --topbar-bg: #333;
+  --sidebar-bg: #222;
+  --sidebar-hover-bg: #ffcc00;
+  --grid-bg: #ccc;
+  --footer-bg: #333;
+  --link-color: #000;
+}
+
+/* Dark theme toggled on the body */
+body.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --topbar-bg: #444;
+  --sidebar-bg: #111;
+  --sidebar-hover-bg: #ffcc00;
+  --grid-bg: #444;
+  --footer-bg: #222;
+  --link-color: #fff;
+}
+
+/* apply variables to elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.top-bar {
+  background-color: var(--topbar-bg);
+  color: white; /* always keep header content white */
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+}
+
+.sidebar li:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: #222;
+}
+
+.grid-item {
+  background-color: var(--grid-bg);
+}
+
+a {
+  color: var(--link-color);
+}
+
+footer {
+  background-color: var(--footer-bg);
+  color: white; /* keep footer text white regardless of theme */
+}
+
+/* ensure footer links stay visible */
+footer a {
+  color: white;
+}

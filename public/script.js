@@ -28,3 +28,35 @@ document.addEventListener('click', (e) => {
   }
 });
 //for sidebar
+
+const btn = document.getElementById("theme-toggle");
+const currentTheme = localStorage.getItem("theme");
+
+function updateToggleText() {
+  if (!btn) return;
+  if (document.body.classList.contains("dark-theme")) {
+    btn.textContent = "Light Mode";
+  } else {
+    btn.textContent = "Dark Mode";
+  }
+}
+
+// apply stored preference
+if (currentTheme === "dark") {
+  document.body.classList.add("dark-theme");
+}
+// reflect the correct button label (no-op if there is no button)
+updateToggleText();
+
+if (btn) {
+  btn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+    updateToggleText();
+    
+    let theme = "light";
+    if (document.body.classList.contains("dark-theme")) {
+      theme = "dark";
+    }
+    localStorage.setItem("theme", theme);
+  });
+}
