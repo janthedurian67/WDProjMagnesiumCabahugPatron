@@ -1,32 +1,21 @@
-const hamburger = document.getElementById('hamburger');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('overlay');
+// global script now handles the sidebar. page-specific behavior follows
 
-function openSidebar() {
-  sidebar.style.left = '0';
-  overlay.style.display = 'block';
-}
-
-function closeSidebar() {
-  sidebar.style.left = '-250px';
-  overlay.style.display = 'none';
-}
-
-hamburger.addEventListener('click', () => {
-  if (sidebar.style.left === '0px') {
-    closeSidebar();
-  } else {
-    openSidebar();
-  }
-});
-
-overlay.addEventListener('click', closeSidebar);
-
-document.addEventListener('click', (e) => {
-  if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-    closeSidebar();
-  }
-}); //for sidebar
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownHeaders = document.querySelectorAll('.dropdown-header');
+    
+    dropdownHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const dropdown = this.closest('.celeb-dropdown');
+            dropdown.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (dropdown.classList.contains('active')) {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    });
+}); //for dropdown
 
 document.addEventListener('DOMContentLoaded', function() {
     const dropdownHeaders = document.querySelectorAll('.dropdown-header');

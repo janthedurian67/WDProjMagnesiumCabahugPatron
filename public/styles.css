@@ -187,3 +187,22 @@ footer {
 footer a {
   color: white;
 }
+
+/* theme toggle button styles */
+#theme-toggle {
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.top-bar #theme-toggle {
+  margin-left: 10px;
+  color: white;
+}
+
+/* if ever a dark mode with light top-bar text, ensure button matches */
+body.dark-theme .top-bar #theme-toggle {
+  color: white;
+}
