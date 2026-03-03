@@ -14,11 +14,8 @@
   .top-bar {
     display: flex;
     align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-  }
-  
+  background-color: var(--topbar-bg);
+  color: var(--text-color);
   .weblogo {
     margin-left: 20px;
     margin-right: auto;
@@ -49,14 +46,8 @@
     left: -250px;
     width: 250px;
     height: 100%;
-    background-color: #222;
-    color: white;
-    transition: left 0.3s ease;
-    z-index: 1000;
-    padding-top: 60px;
-  }
-  
-  .sidebar ul {
+  background-color: var(--sidebar-bg);
+  color: var(--text-color);
     list-style: none;
     padding: 0;
     color:#222;
