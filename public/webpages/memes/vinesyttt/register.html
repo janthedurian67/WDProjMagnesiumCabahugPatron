@@ -6,6 +6,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="../../../styles.css">
+  <!-- page-specific styles to spruce up the register form -->
+  <style>
+    .form-container {
+      max-width: 420px;
+      margin: 40px auto 60px;
+      background: #fafafa;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .form-container h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .form-container p {
+      text-align: center;
+      color: #555;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 12px;
+      font-weight: bold;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="password"],
+    .form-container input[type="date"] {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 4px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-container fieldset {
+      border: 1px solid #ccc;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .form-container button:hover {
+      background-color: #555;
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .form-footer a {
+      color: #333;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
@@ -13,68 +84,66 @@
   <header>
     <div class="top-bar">
       <a href="../../index.html" class="home-link">Home</a>
-      <button id="theme-toggle">Switch Mode</button>
     </div>
   </header>
 
-  <h1>Register</h1>
-  <p>Create an account to unlock special features.</p>
+  <div class="form-container">
+    <h1>Register</h1>
+    <p>Create an account to unlock special features.</p>
 
-  <form id="registerForm">
-
-    <label>
-      Full Name:
-      <input type="text" id="name" required>
-    </label><br><br>
-
-    <label>
-      Username / Display Name:
-      <input type="text" id="username" required>
-    </label><br><br>
-
-    <label>
-      Birthdate:
-      <input type="date" id="birthdate" required>
-    </label><br><br>
-
-    <label>
-      Email:
-      <input type="email" id="email" required>
-    </label><br><br>
-
-    <label>
-      Password:
-      <input type="password" id="password" required>
-    </label><br><br>
-
-    <fieldset>
-      <legend>Select your interests:</legend>
-
+    <form id="registerForm">
       <label>
-        <input type="checkbox" value="News"> News
-      </label><br>
-
-      <label>
-        <input type="checkbox" value="Icons & Celebrities"> Icons & Celebrities
-      </label><br>
-
-      <label>
-        <input type="checkbox" value="Memes & Trends"> Memes & Trends
-      </label><br>
-
-      <label>
-        <input type="checkbox" value="Rise of the Internet"> Rise of the Internet
+        Full Name:
+        <input type="text" id="name" required placeholder="e.g. Jane Doe">
       </label>
-    </fieldset><br>
 
-    <button type="submit">Register</button>
+      <label>
+        Username / Display Name:
+        <input type="text" id="username" required placeholder="choose a unique name">
+      </label>
 
-  </form>
+      <label>
+        Birthdate:
+        <input type="date" id="birthdate" required>
+      </label>
 
-  <p>
-    Already have an account?
-    <a href="login.html">Log in here</a>
-  </p>
+      <label>
+        Email:
+        <input type="email" id="email" required placeholder="you@example.com">
+      </label>
+
+      <label>
+        Password:
+        <input type="password" id="password" required placeholder="minimum 8 characters">
+      </label>
+
+      <fieldset>
+        <legend>Select your interests:</legend>
+
+        <label>
+          <input type="checkbox" value="News"> News
+        </label>
+
+        <label>
+          <input type="checkbox" value="Icons & Celebrities"> Icons & Celebrities
+        </label>
+
+        <label>
+          <input type="checkbox" value="Memes & Trends"> Memes & Trends
+        </label>
+
+        <label>
+          <input type="checkbox" value="Rise of the Internet"> Rise of the Internet
+        </label>
+      </fieldset>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="form-footer">
+      Already have an account? <a href="login.html">Log in here</a>
+    </div>
+  </div>
 
   <script>
     const form = document.getElementById("registerForm");
@@ -110,7 +179,7 @@
   </script>
   <script src="../../../script.js"></script>
   <footer>
-    <p>© 2025 PopArchives &nbsp; | &nbsp; <button id="theme-toggle">Switch Mode</button></p>
+    <p>© 2025 PopArchives &nbsp; </p>
   </footer>
 
 </body>
