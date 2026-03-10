@@ -126,7 +126,6 @@ footer {
   margin-top: auto;
 }
 
-/* default light theme variables */
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
@@ -138,19 +137,6 @@ footer {
   --link-color: #000;
 }
 
-/* Dark theme toggled on the body */
-body.dark-theme {
-  --bg-color: #121212;
-  --text-color: #f0f0f0;
-  --topbar-bg: #444;
-  --sidebar-bg: #111;
-  --sidebar-hover-bg: #ffcc00;
-  --grid-bg: #444;
-  --footer-bg: #222;
-  --link-color: #fff;
-}
-
-/* apply variables to elements */
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -158,7 +144,7 @@ body {
 
 .top-bar {
   background-color: var(--topbar-bg);
-  color: white; /* always keep header content white */
+  color: white;
 }
 
 .sidebar {
@@ -180,29 +166,9 @@ a {
 
 footer {
   background-color: var(--footer-bg);
-  color: white; /* keep footer text white regardless of theme */
+  color: white; 
 }
 
-/* ensure footer links stay visible */
 footer a {
-  color: white;
-}
-
-/* theme toggle button styles */
-#theme-toggle {
-  background: none;
-  border: 1px solid currentColor;
-  border-radius: 4px;
-  padding: 4px 8px;
-  cursor: pointer;
-}
-
-.top-bar #theme-toggle {
-  margin-left: 10px;
-  color: white;
-}
-
-/* if ever a dark mode with light top-bar text, ensure button matches */
-body.dark-theme .top-bar #theme-toggle {
   color: white;
 }

@@ -40,31 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
       closeSidebar();
     }
   });
-
-  // --- theme toggle ---------------------------------------------------------------
-  const toggles = document.querySelectorAll('#theme-toggle');
-  const currentTheme = localStorage.getItem('theme');
-
-  if (currentTheme === 'dark') {
-    document.body.classList.add('dark-theme');
-  }
-
-  function updateToggleText() {
-    toggles.forEach(btn => {
-      btn.textContent = document.body.classList.contains('dark-theme')
-        ? 'Light Mode'
-        : 'Dark Mode';
-    });
-  }
-
-  updateToggleText();
-
-  toggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      updateToggleText();
-      const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-      localStorage.setItem('theme', theme);
-    });
-  });
 });
