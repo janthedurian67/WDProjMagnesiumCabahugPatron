@@ -4,6 +4,15 @@
 
 *Everything from Internet memes to celebrities*
 
+**4th Quarter Update**
+
+Update includes:
+- Revision of the system. Instead of dropdown menus, a singular search bar will be in place per site. As the user types in the search bar, it will constantly update (based on the current searches). The system will not be case-sensitive (meaning that typing in lowercase will not differ from typing uppercase). If, by the end of the user's search, the page he wants to find is not found, the only result displayed will prompt the user if they want to create one (must be logged in to create a page, similar to TV Tropes).
+- Log In/Register will be available for all webpages. Profile picture will also be added in the top right corner as well. However, it will be blank and lead the user to the log in page if the user is not logged in/doesn't have an account.
+- Feed idea is scrapped.
+- Makeover for the front page! 
+- New color palette for the website.
+
 Logo: 
 
 <img width="138" height="165" alt="image" src="https://github.com/user-attachments/assets/6efbb39e-4932-442e-a068-8b98dce68fdb" />
