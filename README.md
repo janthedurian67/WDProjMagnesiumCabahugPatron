@@ -6,9 +6,9 @@
 
 **4th Quarter Update**
 
-Update includes:
+Update would include:
 - Revision of the system. Instead of dropdown menus, a singular search bar will be in place per site. As the user types in the search bar, it will constantly update (based on the current searches). The system will not be case-sensitive (meaning that typing in lowercase will not differ from typing uppercase). If, by the end of the user's search, the page he wants to find is not found, the only result displayed will prompt the user if they want to create one (must be logged in to create a page, similar to TV Tropes).
-- Log In/Register will be available for all webpages. Profile picture will also be added in the top right corner as well. However, it will be blank and lead the user to the log in page if the user is not logged in/doesn't have an account.
+- Log In/Register will be available for all webpages. Profile picture will also be added in the top right corner as well. However, it will be blank and lead the user to the log in page if the user is not logged in/doesn't have an account. The profile picture (if logged in) will lead to a profile page where the user may edit their username and profile picture (as well as other details). However, after an update, the user is prohibited from updating their data for a month. Scrolling down, there will be an option to delete their account. Pressing "Delete" will prompt an "Are you sure?", where the account will be deleted if the user selects "yes".
 - Feed idea is scrapped.
 - Makeover for the front page! 
 - New color palette for the website.
