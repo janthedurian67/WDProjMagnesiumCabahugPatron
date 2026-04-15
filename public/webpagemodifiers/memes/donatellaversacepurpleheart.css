@@ -14,9 +14,27 @@ body {
 .top-bar {
   display: flex;
   align-items: center;
-  background-color: #333;
+  background-color: var(--topbar-bg);
   color: white;
   padding: 10px;
+  position: relative;
+  z-index: 950;
+  overflow: visible;
+}
+
+.top-bar.search-active {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.top-bar.search-active .search-bar {
+  background-color: #222;
+  color: #fff;
+}
+
+.top-bar .hamburger,
+.top-bar .site-name,
+.top-bar .search-bar {
+  color: white;
 }
 
 .weblogo {
@@ -29,12 +47,18 @@ body {
 .site-name {
   margin-right: auto;
   position: relative;
-  left: -350px;
+  left: -240px;
 }
 
 .search-bar {
   margin-left: auto;
-  padding: 5px;
+  padding: 10px 14px;
+  width: min(320px, 45vw);
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
 }
 
 .hamburger {
@@ -110,48 +134,6 @@ a.sidebar li:hover{
 .content-body {
     display: flex; /* This creates the sidebar/content split */
     padding-top: 20px;
-}
-
-/* --- TOC (Left Nav) --- */
-.toc-sidebar {
-    width: 250px;
-    padding-right: 20px;
-    padding-top: 0; 
-    border-right: 5px solid black;
-    margin-right: 20px;
-    flex-shrink: 0; 
-}
-
-.toc-header {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    border-bottom: 2px solid black;
-    padding-bottom: 5px;
-    text-transform: uppercase;
-}
-
-.toc-list {
-    list-style: none;
-    padding: 0;
-}
-
-.toc-list li a {
-    display: block;
-    padding: 8px 0;
-    font-size: 16px;
-    color: black;
-    text-decoration: none;
-}
-
-.toc-list li a:hover {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-hr{
-    height:5px;
-    background-color: #222;
 }
 
 /* --- ARTICLE CONTENT (Next to TOC) --- */

@@ -14,8 +14,8 @@ body {
 .top-bar {
   display: flex;
   align-items: center;
-  background-color: var(--topbar-bg);
-  color: var(--text-color);
+  background-color: #d79a4a;
+  color: white;
   padding: 10px;
 }
 
@@ -29,7 +29,7 @@ body {
 .site-name {
   margin-right: auto;
   position: relative;
-  left: -350px;
+  left: -240px;
 }
 
 .search-bar {
@@ -254,4 +254,5 @@ footer {
   position:absolute;
   left:0;
 }
+
 

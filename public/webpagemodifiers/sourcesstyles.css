@@ -29,7 +29,7 @@ body {
 .site-name {
   margin-right: auto;
   position: relative;
-  left: -350px;
+  left: -240px;
 }
 
 .search-bar {
@@ -125,3 +125,4 @@ footer {
   padding: 10px;
   margin-top: auto;
 }
+

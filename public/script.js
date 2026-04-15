@@ -2,7 +2,7 @@
 // document and support buttons added after the script tag. This also prevents the file from
 // throwing when pages do not include every element (e.g. login/register have no sidebar).
 
-document.addEventListener('DOMContentLoaded', () => {
+(() => {
   // --- sidebar toggling (if present) --------------------------------------------------
   const hamburger = document.getElementById('hamburger');
   const sidebar = document.getElementById('sidebar');
@@ -40,4 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
       closeSidebar();
     }
   });
-});
+})();

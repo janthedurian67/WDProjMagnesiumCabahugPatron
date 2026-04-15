@@ -14,8 +14,11 @@
   .top-bar {
     display: flex;
     align-items: center;
-  background-color: var(--topbar-bg);
-  color: var(--text-color);
+    background-color: #d79a4a;
+    color: white;
+    padding: 10px;
+  }
+  
   .weblogo {
     margin-left: 20px;
     margin-right: auto;
@@ -26,7 +29,7 @@
   .site-name {
     margin-right: auto;
     position: relative;
-    left: -350px;
+    left: -240px;
   }
   
   .search-bar {
@@ -46,8 +49,8 @@
     left: -250px;
     width: 250px;
     height: 100%;
-  background-color: var(--sidebar-bg);
-  color: var(--text-color);
+    background-color: #333;
+    color: white;
     list-style: none;
     padding: 0;
     color:#222;

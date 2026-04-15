@@ -29,12 +29,106 @@ body {
 .site-name {
   margin-right: auto;
   position: relative;
-  left: -350px;
+  left: -240px;
 }
 
 .search-bar {
   margin-left: auto;
-  padding: 5px;
+  padding: 10px 14px;
+  width: min(320px, 45vw);
+  max-width: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.search-bar::placeholder {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.search-autocomplete {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 20px;
+  min-width: 320px;
+  width: min(420px, calc(100vw - 40px));
+  background: rgba(16, 16, 16, 0.97);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: none;
+  z-index: 1200;
+}
+
+.search-autocomplete.active {
+  display: block;
+}
+
+.search-autocomplete-item,
+.search-autocomplete-note {
+  padding: 14px 16px;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.search-autocomplete-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.search-autocomplete-item:hover,
+.search-autocomplete-item.selected {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.search-thumb {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #222;
+}
+
+.search-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.search-autocomplete-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.search-autocomplete-title {
+  font-weight: 700;
+  color: #fff;
+}
+
+.search-autocomplete-subtitle {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.search-autocomplete-note {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.highlight {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 3px;
 }
 
 .hamburger {
@@ -129,7 +223,7 @@ footer {
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --topbar-bg: #333;
+  --topbar-bg: #d79a4a;
   --sidebar-bg: #222;
   --sidebar-hover-bg: #ffcc00;
   --grid-bg: #ccc;
