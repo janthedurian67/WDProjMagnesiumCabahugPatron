@@ -1,32 +1,38 @@
-const hamburger = document.getElementById('hamburger');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('overlay');
+(() => {
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
 
-function openSidebar() {
-  sidebar.style.left = '0';
-  overlay.style.display = 'block';
-}
-
-function closeSidebar() {
-  sidebar.style.left = '-250px';
-  overlay.style.display = 'none';
-}
-
-hamburger.addEventListener('click', () => {
-  if (sidebar.style.left === '0px') {
-    closeSidebar();
-  } else {
-    openSidebar();
+  function openSidebar() {
+    if (sidebar) sidebar.style.left = '0';
+    if (overlay) overlay.style.display = 'block';
   }
-});
 
-overlay.addEventListener('click', closeSidebar);
-
-document.addEventListener('click', (e) => {
-  if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-    closeSidebar();
+  function closeSidebar() {
+    if (sidebar) sidebar.style.left = '-250px';
+    if (overlay) overlay.style.display = 'none';
   }
-});
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      if (sidebar && sidebar.style.left === '0px') {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeSidebar);
+  }
+
+  document.addEventListener('click', (e) => {
+    if (sidebar && hamburger && !sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+      closeSidebar();
+    }
+  });
+})();
 
 //for sidebar
 

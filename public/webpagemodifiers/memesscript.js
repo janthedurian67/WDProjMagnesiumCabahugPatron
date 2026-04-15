@@ -17,9 +17,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }); //for dropdown
 
-function isSearchMember() {
-  return document.body.classList.contains('member') || localStorage.getItem('member') === 'true';
+// Set login and register links with correct paths
+const loginLink = document.querySelector('.login-link');
+if (loginLink) loginLink.href = pathPrefix + 'login.html';
+
+const registerLink = document.querySelector('.register-link');
+if (registerLink) registerLink.href = pathPrefix + 'register.html';
+
+// Profile circle click handler
+const profileCircle = document.getElementById('profile-circle');
+if (profileCircle) {
+  profileCircle.addEventListener('click', () => {
+    if (isSearchMember()) {
+      window.location.href = pathPrefix + 'profile.html';
+    }
+  });
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.querySelector('.top-bar .search-bar') || document.getElementById('site-search');
