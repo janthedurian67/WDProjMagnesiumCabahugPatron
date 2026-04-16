@@ -41,3 +41,56 @@
     }
   });
 })();
+
+document.addEventListener("DOMContentLoaded", function() {
+  const loggedIn = localStorage.getItem("loggedIn");
+  const userData = JSON.parse(localStorage.getItem("poparchivesUser"));
+
+  // Find the elements
+  const loginLink = document.querySelector(".login-link");
+  const registerLink = document.querySelector(".register-link");
+  const profileCircle = document.getElementById("profile-circle");
+
+  if (loggedIn === "true" && userData) {
+    // --- USER IS LOGGED IN ---
+    
+    // 1. Remove/Hide Login and Register
+    if (loginLink) loginLink.style.display = "none";
+    if (registerLink) registerLink.style.display = "none";
+
+    // 2. Show and Setup Profile Circle
+    if (profileCircle) {
+      profileCircle.style.display = "flex"; // Show it
+      profileCircle.style.cursor = "pointer";
+
+      if (userData.profilePic) {
+        // Show uploaded image
+        profileCircle.style.backgroundImage = `url(${userData.profilePic})`;
+        profileCircle.style.backgroundSize = "cover";
+        profileCircle.style.backgroundPosition = "center";
+        profileCircle.textContent = ""; 
+      } else {
+        // Fallback: Initial letter
+        profileCircle.textContent = userData.username.charAt(0).toUpperCase();
+        profileCircle.style.backgroundColor = "#333";
+        profileCircle.style.color = "white";
+        profileCircle.style.justifyContent = "center";
+        profileCircle.style.alignItems = "center";
+      }
+
+      // 3. Navigation to Profile
+      profileCircle.onclick = function() {
+        window.location.href = "profile.html";
+      };
+    }
+  } else {
+    // --- USER IS NOT LOGGED IN ---
+    
+    // 1. Show Login and Register
+    if (loginLink) loginLink.style.display = "inline-block";
+    if (registerLink) registerLink.style.display = "inline-block";
+
+    // 2. Hide Profile Circle
+    if (profileCircle) profileCircle.style.display = "none";
+  }
+});

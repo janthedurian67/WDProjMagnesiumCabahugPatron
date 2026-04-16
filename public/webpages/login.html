@@ -102,7 +102,7 @@
     </ul>
   </nav>
 
-  <form class="form-container" action="/login" method="POST">
+  <form class="form-container" id="loginForm">
     <h1>Log In</h1>
     <p>Please enter your credentials to log in.</p>
     
@@ -120,32 +120,30 @@
   </div>
 
   <script>
-    const form = document.getElementById("registerForm");
+    const loginForm = document.getElementById("loginForm");
 
-    form.addEventListener("submit", function(event) {
+    loginForm.addEventListener("submit", function(event) {
       event.preventDefault();
 
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+      const userInput = document.getElementById("username").value;
+      const passInput = document.getElementById("password").value;
 
-      const interests = [];
-      document.querySelectorAll('input[type="checkbox"]:checked')
-        .forEach(item => interests.push(item.value));
+      const savedData = localStorage.getItem("poparchivesUser");
 
-      const userData = {
-        name,
-        username,
-        birthdate,
-        email,
-        password,
-        interests
-      };
+      if (savedData) {
+        const userData = JSON.parse(savedData);
 
-      localStorage.setItem("poparchivesUser", JSON.stringify(userData));
-      localStorage.setItem("loggedIn", "true");
-
-      alert("Registration successful!");
-      window.location.href = "profile.html";
+        // Check if username and password match
+        if (userInput === userData.username && passInput === userData.password) {
+          localStorage.setItem("loggedIn", "true");
+          alert("Welcome back, " + userData.name + "!");
+          window.location.href = "profile.html";
+        } else {
+          alert("Invalid username or password.");
+        }
+      } else {
+        alert("No account found. Please register first.");
+      }
     });
   </script>
   <script src="../script.js"></script>

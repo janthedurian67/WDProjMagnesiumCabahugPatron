@@ -410,3 +410,21 @@ footer {
   font-style: italic;
   padding: 20px;
 }
+
+.register-link {
+  color: white;
+  text-decoration: underline;
+  margin-left: 20px;
+  font-weight: 500;
+  position: relative;
+  left: 200px;
+}
+
+.login-link {
+  color: white;
+  text-decoration: underline;
+  margin-left: 20px;
+  font-weight: 500;
+  position: relative;
+  left: 200px;
+}

@@ -283,3 +283,31 @@ footer {
 footer a {
   color: white;
 }
+
+.register-link {
+  color: white;
+  text-decoration: underline;
+  margin-left: 20px;
+  font-weight: 500;
+  position: relative;
+  left: 200px;
+}
+
+.login-link {
+  color: white;
+  text-decoration: underline;
+  margin-left: 20px;
+  font-weight: 500;
+  position: relative;
+  left: 200px;
+}
+
+.profile-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+

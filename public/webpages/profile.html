@@ -15,7 +15,7 @@
       <img class="weblogo" src="../../assets/museumlogo.jpg" width="70" height="70">
       <div class="site-name"> <p>  PopArchives </p></div>
       <input type="text" class="search-bar" placeholder="Search..." autocomplete="off" /> <!-- for the search bar -->
-      <button id="logoutBtn">Log Out</button>
+      <div class="profile-circle" id="profile-circle"></div>
     </div>
   </header>
 
@@ -36,38 +36,89 @@
     <h1>Your Profile</h1>
 
     <div class="profile-box">
+      <div id="displayProfilePic" style="width:100px; height:100px; border-radius:50%; background-size:cover; background-position:center; margin-bottom:15px; border:2px solid #333; display:none;"></div>
+    
       <p><strong>Full Name:</strong> <span id="profileName"></span></p>
       <p><strong>Username:</strong> <span id="profileUsername"></span></p>
       <p><strong>Email:</strong> <span id="profileEmail"></span></p>
       <p><strong>Birthdate:</strong> <span id="profileBirthdate"></span></p>
       <p><strong>Interests:</strong> <span id="profileInterests"></span></p>
     </div>
-  </main>
 
-  <script>
-    const loggedIn = localStorage.getItem("loggedIn");
-    const userData = JSON.parse(localStorage.getItem("poparchivesUser"));
+    <hr>
+  
+    <div class="account-actions">
+      <h3>Account Settings</h3>
+      <p><strong>Change Profile Picture:</strong></p>
+      <input type="file" id="imageUpload" accept="image/*">
+      <button id="saveImageBtn">Upload Picture</button>
 
-    if (!loggedIn || !userData) {
-      alert("You must be logged in to view this page.");
-      window.location.href = "login.html";
+      <div style="margin-top: 30px;">
+        <button id="logoutBtn" style="background-color: #555; color: white; padding: 10px 20px; border: none; cursor: pointer;">Log Out</button>
+        <button id="deleteAccBtn" style="background-color: #cc0000; color: white; padding: 10px 20px; border: none; cursor: pointer; margin-left: 10px;">Delete Account</button>
+      </div>
+    </div>
+</main>
+
+<script>
+  const loggedIn = localStorage.getItem("loggedIn");
+  const userData = JSON.parse(localStorage.getItem("poparchivesUser"));
+
+  if (!loggedIn || !userData) {
+    alert("You must be logged in to view this page.");
+    window.location.href = "login.html";
+  }
+
+  // Display User Data
+  document.getElementById("profileName").textContent = userData.name;
+  document.getElementById("profileUsername").textContent = userData.username;
+  document.getElementById("profileEmail").textContent = userData.email;
+  document.getElementById("profileBirthdate").textContent = userData.birthdate;
+  document.getElementById("profileInterests").textContent = 
+    userData.interests && userData.interests.length > 0 ? userData.interests.join(", ") : "No interests selected";
+
+  // Show profile pic if it exists
+  if (userData.profilePic) {
+    const picDiv = document.getElementById("displayProfilePic");
+    picDiv.style.display = "block";
+    picDiv.style.backgroundImage = `url(${userData.profilePic})`;
+  }
+
+  // --- LOGIC: SAVE IMAGE ---
+  document.getElementById("saveImageBtn").addEventListener("click", function() {
+    const file = document.getElementById("imageUpload").files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        userData.profilePic = e.target.result;
+        localStorage.setItem("poparchivesUser", JSON.stringify(userData));
+        alert("Profile picture updated!");
+        window.location.reload();
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert("Please select a file first.");
     }
+  });
 
-    document.getElementById("profileName").textContent = userData.name;
-    document.getElementById("profileUsername").textContent = userData.username;
-    document.getElementById("profileEmail").textContent = userData.email;
-    document.getElementById("profileBirthdate").textContent = userData.birthdate;
-    document.getElementById("profileInterests").textContent =
-      userData.interests.length > 0
-        ? userData.interests.join(", ")
-        : "No interests selected";
+  // --- LOGIC: LOGOUT ---
+  document.getElementById("logoutBtn").addEventListener("click", function () {
+    localStorage.removeItem("loggedIn");
+    alert("You have been logged out.");
+    window.location.href = "../../index.html";
+  });
 
-    document.getElementById("logoutBtn").addEventListener("click", function () {
+  // --- LOGIC: DELETE ACCOUNT ---
+  document.getElementById("deleteAccBtn").addEventListener("click", function() {
+    const confirmDelete = confirm("Are you sure you want to delete your account? This action cannot be undone.");
+    if (confirmDelete) {
+      localStorage.removeItem("poparchivesUser");
       localStorage.removeItem("loggedIn");
-      alert("You have been logged out.");
+      alert("Account deleted.");
       window.location.href = "../../index.html";
-    });
-  </script>
+    }
+  });
+</script>
   <script src="../script.js"></script>
   <script src="../webpagemodifiers/memesscript.js"></script>
   <footer>
