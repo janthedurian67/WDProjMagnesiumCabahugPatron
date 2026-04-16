@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // 3. Navigation to Profile
       profileCircle.onclick = function() {
-        window.location.href = "profile.html";
+        window.location.href = "/public/webpages/profile.html";
       };
     }
   } else {
